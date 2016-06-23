@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<div class="row">
+	<form action="{% url 'login' %}" method='POST'>
+			{% csrf_token %}
+			        {% for field in f %}
+        						<div class="input-field col s8 m6 l6 offset-s2 offset-m3 offset-l3">
+				                    {{field}}
+				                    <label>{{ field.label }}</label> 
+			                	</div>
+			        {% endfor %}
+					<div class="row">
+			        <button class="btn waves-effect waves-light col s6 m4 l2 offset-s3 offset-m4 offset-l5" type="submit" name="action">Login
+					    <i class="material-icons right">send</i>
+					</button>
+					 </div>
+					 <a class="waves-effect waves-light btn  col s6 m4 l2 offset-s3 offset-m4 offset-l5">SignUp</a>
+	</form>
+</div>
+{% endblock %}
