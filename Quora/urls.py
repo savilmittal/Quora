@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from account.views import user_login,show_signup
+from account.views import user_login,show_signup,user_signup,show_login
 urlpatterns = [
-	url(r'^$',include('account.urls')),
-	url(r'^login$',user_login,name='login'),
-    url(r'^signup$',show_signup,name='signup'),
+    url(r'^$',show_login),
+	url(r'^account/',include('account.urls')),
     url(r'^admin/', admin.site.urls),
 ]

@@ -2,12 +2,13 @@
 {% block title %}Sign Up{% endblock %}
 {% block body %}
 <div class="row">
-	<form action="" method='POST'>
+	<form action="{% url 'usersignup' %}" method='POST'>
 			{% csrf_token %}
 			        {% for field in f %}
         						<div class="input-field col s8 m6 l6 offset-s2 offset-m3 offset-l3">
 				                    {{field}}
 				                    <label>{{ field.label }}</label> 
+				                    {{field.errors}}
 			                	</div>
 			        {% endfor %}
 					<div class="row">

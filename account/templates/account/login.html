@@ -4,6 +4,7 @@
 <div class="row">
 	<form action="{% url 'login' %}" method='POST'>
 			{% csrf_token %}
+					<div class="col s8 m6 l6 offset-s2 offset-m3 offset-l3">{{x}}</div>
 			        {% for field in f %}
         						<div class="input-field col s8 m6 l6 offset-s2 offset-m3 offset-l3">
 				                    {{field}}
