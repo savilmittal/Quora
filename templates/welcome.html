@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% block title %}Welcome{% endblock %}
+{% block body %}
+	<h4 class="center">{{message}}</h4>
+{% endblock %}
+{% block hi %}
+	<h5>{{hi}}</h5>
+{% endblock %}
+{% block menu %}
+        <li><a href="{% url 'changepassword' %}">Change Password</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+{% endblock %}
+{% block menu1 %}
+        <li><a href="{% url 'changepassword' %}">Change Password</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+{% endblock %}

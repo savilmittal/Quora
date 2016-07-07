@@ -16,3 +16,11 @@ class LoginForm(forms.ModelForm):
 		model = MyUser
 		fields=('username','password',)
 		
+class ChangePassword(forms.Form):
+	password=forms.CharField(max_length=20,widget=forms.PasswordInput(),required=True)
+	class Meta:
+		fields=('password',)
+class ForgotPassword(forms.Form):
+	token=forms.CharField(required=True)
+
+			

@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import show_login,user_login,user_logout,user_signup,show_signup,user_welcome
+from .views import show_login,user_login,user_logout,user_signup,show_signup,user_welcome,show_changepassword,user_changepassword,forget_password,userforget
 urlpatterns = [
+    url(r'^userforget/$',userforget,name='userforget'),
+    url(r'^forgetpassword/$',forget_password,name='forgetpassword'),
 	url(r'^login/$',user_login,name='login'),
+    url(r'^changepassword/$',show_changepassword,name='changepassword'),
+    url(r'^userchangepassword/$',user_changepassword,name='userchangepassword'),
     url(r'^usersignup/$',user_signup,name='usersignup'),
     url(r'^welcome/$',user_welcome,name='welcome'),
     url(r'^signup/$',show_signup,name='signup'),
